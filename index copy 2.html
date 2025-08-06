@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michelle Bui</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="scripts/csvparser.js"></script>
+</head>
+
+<body class="bg-pink-100 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-pink-700 shadow text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="#" class="font-serif text-xl font-bold">Michelle Bui</a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#" class="font-serif hover:text-pink-200 font-medium">Home</a>
+          <a href="#" class="font-serif hover:text-pink-200 font-medium">About</a>
+          <a href="#" class="font-serif hover:text-pink-200 font-medium">Projects</a>
+          <a href="#" class="font-serif hover:text-pink-200 font-medium">Contact</a>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-10">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+
+      <!-- Image -->
+      <img src="/images/randomsim.jpg" alt="Michelle"
+        class="w-full md:w-1/2 rounded-lg shadow-md object-cover aspect-square">
+
+      <!-- Text -->
+      <section class="font-serif w-full md:w-1/2">
+        <h1 class="text-3xl font-bold mb-4">hey, i’m michelle 👋</h1>
+        <p class="text-lg leading-relaxed">
+          i’m a cs master’s student at cal state fullerton (bs from uci 💻)
+          figuring out where i fit in the tech world. right now, i’m exploring software + data engineering
+          and open to internships where i can learn cool stuff, build real things, and grow along the way.
+          take a look around — you’ll find some of my projects, experiences, and whatever else i’m currently
+          geeking out about.
+        </p>
+        </p>
+        <a href="https://www.linkedin.com/in/michbui" class="pink-link">
+          <p>LinkedIn: www.linkedin.com/in/michbui</p>
+        </a>
+        <a href="mailto:michellebui3402@gmail.com" class="pink-link">
+          <p>Email: michellebui3402@gmail.com</p>
+        </a>
+        <p>Please reach out on the above links for my phone number</p>
+          <figure class="w-64 h-64">
+   
+  </figure>
+      </section>
+      
+    </div>
+  </main>
+
+  <!--about me-->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <section class="w-full md:w-1/2 font-serif">
+
+      <h1 class="text-3xl font-bold mb-8">about me</h1>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">education</h2>
+        <div class="space-y-3">
+          <p>
+            <strong>California State University, Fullerton - M.S. Computer Science</strong><br>
+            <em>Expected Graduation May 2027</em>
+          </p>
+          <p>
+            <strong>University of California Irvine - B.S. Computer Science</strong><br>
+            <em>Graduated June 2024</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">fellowships</h2>
+        <div class="space-y-3">
+          <p>
+            <strong>COOP Career - Data Analytics Fellow</strong><br>
+            <em>Fall 2024</em>
+          </p>
+          <p>
+            <strong>Girls Who Code Leadership Academy Fellow</strong><br>
+            <em>Fall 2023</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">organizations</h2>
+        <div class="space-y-3">
+          <p>
+            <strong>Delta Lambda Chi</strong><br>
+            <em>Held Cabinet Positions: Secretary, New Member Educator, Academics Chair,
+              Webmistress</em>
+          </p>
+          <p>
+            <strong>UCI Multicultural Sorority and Fraternity Council</strong><br>
+            <em>Vice President of Communication</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">certifications</h2>
+        <p><strong>Google Analytics Professional Certificate (Coursera)
+          </strong><br>
+          <em>Recieved November 2024</em>
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">hobbies/interests</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+              <p class="font-semibold text-lg mb-4">Hobbies</p>
+              <div class="space-y-2 text-base">
+                <p>Video Editing</p>
+                <p>Gaming</p>
+                <p>Knitting</p>
+                <p>Crocheting</p>
+                <p>Building Legos</p>
+                <p>Reading</p>
+              </div>
+            </div>
+            <div>
+              <p class="font-semibold text-lg mb-4">Interests</p>
+              <div class="space-y-2 text-base">
+                <p>Harry Potter</p>
+                <p>Tech</p>
+                <p>Fortnite</p>
+                <p>Minecraft</p>
+              </div>
+            </div>
+            <div>
+              <p class="font-semibold text-lg mb-4">Fun Facts</p>
+              <p>I love Chihuahuas</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </section>
+
+
+  </section>
+
+  <!--experience + skills-->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <section class="w-full md:w-1/2 font-serif">
+      <h1 class="text-3xl font-bold mb-8">experiences + skills</h1>
+    </section>
+  </section>
+
+  <!--projects-->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <section class="w-full md:w-1/2 font-serif">
+      <h1 class="text-3xl font-bold mb-8">projects</h1>
+    </section>
+  </section>
+
+  <!--contact me-->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <section class="w-full md:w-1/2 font-serif">
+
+      <h1 class="text-3xl font-bold mb-8">contact me</h1>
+    </section>
+  </section>
+  <!-- CSV Table Container (inserted at bottom) -->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <h2 class="text-3xl font-bold mb-6 font-serif">Project Data from CSV</h2>
+    <div id="output" class="overflow-x-auto"></div>
+  </section>
+<script>
+  // Load and parse CSV from file in same directory
+  Papa.parse('michelle_projects.csv', {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function(results) {
+      displayData(results.data);
+    },
+    error: function(err) {
+      console.error('Error loading CSV:', err);
+      const container = document.getElementById('output');
+      container.innerHTML = `<p class="text-red-600">Failed to load project data.</p>`;
+    }
+  });
+
+  function displayData(data) {
+    const container = document.getElementById('output');
+    if (!data.length) {
+      container.innerHTML = '<p class="text-red-600">No data found in CSV.</p>';
+      return;
+    }
+
+    const table = document.createElement('table');
+    table.className = 'min-w-full border-collapse border border-gray-300 font-serif';
+
+    // Create header row
+    const headerRow = document.createElement('tr');
+    Object.keys(data[0]).forEach(key => {
+      const th = document.createElement('th');
+      th.textContent = key;
+      th.className = 'border border-gray-300 px-4 py-2 bg-pink-200 text-left sticky top-0';
+      headerRow.appendChild(th);
+    });
+    table.appendChild(headerRow);
+
+    // Create data rows
+    data.forEach(row => {
+      const tr = document.createElement('tr');
+      Object.entries(row).forEach(([key, val]) => {
+        const td = document.createElement('td');
+        // If the column is Link and value is a URL, make it clickable
+        if (key.toLowerCase() === 'link' && val && val !== '0') {
+          const a = document.createElement('a');
+          a.href = val;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.textContent = val;
+          a.className = 'text-pink-600 hover:underline';
+          td.appendChild(a);
+        } else {
+          td.textContent = val;
+        }
+        td.className = 'border border-gray-300 px-4 py-2';
+        tr.appendChild(td);
+      });
+      table.appendChild(tr);
+    });
+
+    container.appendChild(table);
+  }
+</script>
+
+</html>

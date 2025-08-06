@@ -1,0 +1,51 @@
+/* General Styling */
+#projects-container, #websites-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.col h2 {
+    color: rgb(255, 0, 208); /* Change the color of the title */
+    font-weight: bold;
+    font-family: "Georgia";
+}
+
+/* Change paragraph font color to dark gray */
+.col p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #000000; /* Dark gray */
+}
+
+/* Change link font color to blue */
+.col a {
+    color: rgb(255, 0, 208);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.col a:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+

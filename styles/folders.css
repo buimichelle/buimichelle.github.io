@@ -1,0 +1,55 @@
+.folder {
+      background: oklch(82.3% 0.12 346.018);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      cursor: pointer;
+      position: relative;
+      overflow: visible;
+      transition:
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+      padding: 1.5rem 2rem 1.5rem 2rem;
+    }
+
+    .folder::before {
+      content: '';
+      position: absolute;
+      top: -18px;
+      left: 20px;
+      width: 80px;
+      height: 24px;
+      background: oklch(82.3% 0.12 346.018);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+      transition: background-color 0.3s ease;
+      z-index: 1;
+    }
+
+    .folder:hover {
+      background-color: #fffbea;
+      box-shadow: 0 10px 15px rgb(0 0 0 / 0.15);
+      z-index: 10;
+    }
+
+    .folder:hover::before {
+      background-color: #f7d94c;
+    }
+
+    /* Accordion content */
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-top: 0.5rem;
+      color: #444;
+    }
+
+    /* Expanded content */
+    .content.expanded {
+      max-height: 1000px;
+      /* large enough to show content */
+      margin-top: 1rem;
+    }
