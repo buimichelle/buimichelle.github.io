@@ -8,12 +8,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="scripts/csvparser.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <link rel="icon" href="/images/icons8-cute-48.png">
+
+
 </head>
 
 <body class="bg-pink-100 min-h-screen">
 
   <!-- Header -->
-  <header class="bg-pink-700 shadow text-white">
+  <header id="home" class="bg-pink-700 shadow text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
@@ -23,10 +28,12 @@
 
         <!-- Desktop Nav -->
         <nav class="hidden md:flex space-x-8">
-          <a href="#" class="font-serif hover:text-pink-200 font-medium">Home</a>
-          <a href="#" class="font-serif hover:text-pink-200 font-medium">About</a>
-          <a href="#" class="font-serif hover:text-pink-200 font-medium">Projects</a>
-          <a href="#" class="font-serif hover:text-pink-200 font-medium">Contact</a>
+          <a href="#home" class="font-serif hover:text-pink-200 font-medium">Home</a>
+          <a href="#aboutme" class="font-serif hover:text-pink-200 font-medium">About</a>
+          <a href="#experiences" class="font-serif hover:text-pink-200 font-medium">Experience</a>
+          <a href="#skills" class="font-serif hover:text-pink-200 font-medium">Skills</a>
+          <a href="#projects" class="font-serif hover:text-pink-200 font-medium">Projects</a>
+          <a href="#contact" class="font-serif hover:text-pink-200 font-medium">Contact</a>
         </nav>
 
       </div>
@@ -34,11 +41,11 @@
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-7xl mx-auto px-4 py-10">
+  <main class="max-w-7xl mx-auto px-4 py-10 font-serif">
     <div class="flex flex-col md:flex-row gap-8 items-center">
 
       <!-- Image -->
-      <img src="/images/headshot.png" alt="Michelle"
+      <img src="/images/michelle_grad.jpeg" alt="Michelle"
         class="w-full md:w-1/2 rounded-lg shadow-md object-cover aspect-square">
 
       <!-- Text -->
@@ -49,26 +56,35 @@
           figuring out where i fit in the tech world. right now, i’m exploring software + data engineering
           and open to internships where i can learn cool stuff, build real things, and grow along the way.
           take a look around — you’ll find some of my projects, experiences, and whatever else i’m currently
-          geeking out about.
+          geeking out about. <br><br>let's chat more! please reach out to me via email for my number.
+
+        <div class="flex space-x-6 mb-4">
+          <!-- GitHub -->
+          <a href="https://github.com/buimichelle" target="_blank" rel="noopener noreferrer">
+            <img src="/images/github-mark.png" alt="GitHub" class="w-8 h-8 hover:opacity-75 transition" />
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:michellebui3402@gmail.com">
+            <img src="/images/icons8-email-30.png" alt="Email" class="w-8 h-8 hover:opacity-75 transition" />
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/michbui" target="_blank" rel="noopener noreferrer">
+            <img src="/images/InBug-Black.png" alt="LinkedIn" class="w-8 h-8 hover:opacity-75 transition" />
+          </a>
+        </div>
         </p>
         </p>
-        <a href="https://www.linkedin.com/in/michbui" class="pink-link">
-          <p>LinkedIn: www.linkedin.com/in/michbui</p>
-        </a>
-        <a href="mailto:michellebui3402@gmail.com" class="pink-link">
-          <p>Email: michellebui3402@gmail.com</p>
-        </a>
-        <p>Please reach out on the above links for my phone number</p>
-          <figure class="w-64 h-64">
-   
-  </figure>
+
+        <!-- <figure class="w-64 h-64">
+        </figure> -->
       </section>
-      
     </div>
   </main>
 
   <!--about me-->
-  <section class="max-w-7xl mx-auto px-4 py-10">
+  <section id="aboutme" class="max-w-7xl mx-auto px-4 py-10">
     <section class="w-full md:w-1/2 font-serif">
 
       <h1 class="text-3xl font-bold mb-8">about me</h1>
@@ -102,7 +118,9 @@
       </div>
 
       <div class="mb-8">
-        <h2 class="text-2xl font-bold mb-4">organizations</h2>
+        <h2 class="text-2xl font-bold mb-4">organizations<p class=" text-base font-medium">*see experience+skil section
+            to learn more about my achievements in each role!</p>
+        </h2>
         <div class="space-y-3">
           <p>
             <strong>Delta Lambda Chi</strong><br>
@@ -121,68 +139,277 @@
         <p><strong>Google Analytics Professional Certificate (Coursera)
           </strong><br>
           <em>Recieved November 2024</em>
+          <br></bnr><a href="https://coursera.org/share/43929a2495174db1f587ddf6dd222289" target="_blank"
+            rel="noopener noreferrer">See Credential</a>
         </p>
       </div>
 
       <div class="mb-8">
         <h2 class="text-2xl font-bold mb-4">hobbies/interests</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <p class="font-semibold text-lg mb-4">Hobbies</p>
-              <div class="space-y-2 text-base">
-                <p>Video Editing</p>
-                <p>Gaming</p>
-                <p>Knitting</p>
-                <p>Crocheting</p>
-                <p>Building Legos</p>
-                <p>Reading</p>
-              </div>
-            </div>
-            <div>
-              <p class="font-semibold text-lg mb-4">Interests</p>
-              <div class="space-y-2 text-base">
-                <p>Harry Potter</p>
-                <p>Tech</p>
-                <p>Fortnite</p>
-                <p>Minecraft</p>
-              </div>
-            </div>
-            <div>
-              <p class="font-semibold text-lg mb-4">Fun Facts</p>
-              <p>I love Chihuahuas</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <p class="font-semibold text-lg mb-4">Hobbies</p>
+            <div class="space-y-2 text-base">
+              <p>Video Editing</p>
+              <p>Gaming</p>
+              <p>Knitting</p>
+              <p>Crocheting</p>
+              <p>Building Legos</p>
+              <p>Reading</p>
             </div>
           </div>
-        </section>
+          <div>
+            <p class="font-semibold text-lg mb-4">Interests</p>
+            <div class="space-y-2 text-base">
+              <p>Harry Potter</p>
+              <p>Tech</p>
+              <p>Fortnite</p>
+              <p>Minecraft</p>
+            </div>
+          </div>
+          <div>
+            <p class="font-semibold text-lg mb-4">Fun Facts</p>
+            <p>I love Chihuahuas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
 
+  <section id="skills" class="max-w-7xl mx-auto px-4 py-10 font-serif">
+    <h1 class="text-3xl font-bold mb-8">Skills</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+
+      <!-- Programming -->
+      <div>
+        <p class="font-semibold text-lg mb-4">Programming</p>
+        <div class="space-y-2 text-base">
+          <p>Python (matplotlib, scikit-learn, pandas, pytorch, pygame, beautiful soup, numpy, flask)</p>
+          <p>Java (Maven, Apache Tomcat)</p>
+          <p>C/C++</p>
+          <p>JavaScript (Next.js, Node.js, jQuery)</p>
+          <p>R Programming</p>
+          <p>HTML/XML</p>
+          <p>CSS (Bootstrap, Tailwind CSS)</p>
+          <p>MySQL</p>
+        </div>
       </div>
 
-    </section>
+      <!-- Tools & Platforms -->
+      <div>
+        <p class="font-semibold text-lg mb-4">Tools & Platforms</p>
+        <div class="space-y-2 text-base">
+          <p>Excel (VLOOKUP, PivotTables)</p>
+          <p>Tableau</p>
+          <p>Git/GitHub</p>
+          <p>Microsoft Suite (Excel, Teams, PowerPoint, Word, SharePoint)</p>
+          <p>Google Workspace (Sheets, Docs, Slides, Calendar)</p>
+          <p>Basecamp</p>
+          <p>Virtual Environments</p>
+          <p>Docker Containers</p>
+        </div>
+      </div>
 
+      <!-- Core Competencies -->
+      <div>
+        <p class="font-semibold text-lg mb-4">Core Competencies</p>
+        <div class="space-y-2 text-base">
+          <p>Debugging</p>
+          <p>Data Analysis</p>
+          <p>Web Development</p>
+          <p>Agile Development</p>
+          <p>Technical Support & Troubleshooting</p>
+          <p>Windows / macOS</p>
+        </div>
+      </div>
 
+      <!-- Others -->
+      <div>
+        <p class="font-semibold text-lg mb-4">Others</p>
+        <div class="space-y-2 text-base">
+          <p>Crocheting</p>
+          <p>Knitting</p>
+        </div>
+      </div>
+
+    </div>
   </section>
+
+
 
   <!--experience + skills-->
-  <section class="max-w-7xl mx-auto px-4 py-10">
-    <section class="w-full md:w-1/2 font-serif">
-      <h1 class="text-3xl font-bold mb-8">experiences + skills</h1>
+  <section id="experiences" class="max-w-7xl mx-auto px-4 py-10">
+    <section class="w-full font-serif">
+      <h1 class="text-3xl font-bold mb-8">experiences</h1>
+      <div class="space-y-8">
+        <!-- Job 1 -->
+        <div>
+          <strong>athletics it student assistant</strong><br>
+          <em>UC Irvine Office of Information and Technology</em><br>
+          <em>Irvine, CA | Sept 2022 - May 2024</em>
+          <ul class="list-disc list-inside mt-2">
+            <li>Delivered real-time technical support for 70+ live events, rapidly diagnosing and resolving technical
+              failures</li>
+            <li>Logged and documented troubleshooting processes to improve team training and knowledge transfer</li>
+            <li>Operated in fast-paced, autonomous environment with limited supervision</li>
+            <li>Resolved user issues involving network components under tight time constraints</li>
+            <li>Contributed to risk mitigation by identifying patterns and proposing process improvements</li>
+            <li>Collaborated with cross-functional teams (AV, broadcasting, IT support) to ensure seamless execution
+            </li>
+          </ul>
+          <p class="mt-2 text-sm italic">Skills: Technical Support, Troubleshooting, Networking, Communication,
+            Documentation, Window/MacOS</p>
+        </div>
+        <!-- Job 2 -->
+        <div>
+          <strong>ics 32 learning assistant</strong><br>
+          <em>UC Irvine Office of Information and Technology</em><br>
+          <em>Irvine, CA | Jan 2024 - March 2024</em>
+          <ul class="list-disc list-inside mt-2">
+            <li>Served as a Learning Assistant (LA) for ICS 32: Programming with Software Libraries</li>
+            <li>Assisted professor and TAs in active learning classrooms with over 50 students</li>
+            <li>Collaborated weekly with professors and other LAs to optimize curriculum and assess student progress
+            </li>
+          </ul>
+          <p class="mt-2 text-sm italic">Skills: Teaching, Communication, Collaboration, Curriculum Planning, Python,
+            Debugging</p>
+        </div>
+        <!-- Job 3 -->
+        <div>
+          <strong>tech officer</strong><br>
+          <em>Step Up Tutoring</em><br>
+          <em>Remote, CA | March 2021 - July 2021</em>
+          <ul class="list-disc list-inside mt-2">
+            <li>Provided dedicated tech support to 20+ tutors, resolving 95% of issues with Zoom and other technologies
+            </li>
+            <li>Managed scheduling via Calendly and hosted weekly office hours for real-time troubleshooting</li>
+            <li>Empowered tutors with essential technology tools and guidance</li>
+          </ul>
+          <p class="mt-2 text-sm italic">Skills: Tech Support, Zoom, Calendly, Training, Troubleshooting</p>
+        </div>
+        <!-- Job 4 -->
+        <div>
+          <strong>vice-president of communications</strong><br>
+          <em>UC Irvine Multicultural Sorority and Fraternity Council</em><br>
+          <em>Irvine, CA | Jan 2024 - March 2024</em>
+          <ul class="list-disc list-inside mt-2">
+            <li>Led communication between executive board, members, and external partners</li>
+            <li>Revamped family pairing and icebreaker activities, increasing participation by 70%</li>
+            <li>Directed slating interviews for new executive board members</li>
+          </ul>
+          <p class="mt-2 text-sm italic">Skills: Leadership, Communication, Event Planning, Member Engagement, Google
+            Workspace, Basecamp, Wix, Organization</p>
+        </div>
+        <!-- Job 5 -->
+        <div>
+          <strong>secretary</strong><br>
+          <em>Delta Lambda Chi</em><br>
+          <em>Irvine, CA | Jan 2024 - March 2024</em>
+          <ul class="list-disc list-inside mt-2">
+            <li>Managed internal records, official communications, and confidential documentation for a 15-member
+              chapter.</li>
+            <li>Maintained chapter email and responded to inquiries from potential members and external contacts.</li>
+            <li>Scheduled and participated in interviews for potential new members, helping assess alignment with
+              chapter values.</li>
+            <li>Supported the executive board with calendar reminders, event documentation, and coordination of chapter
+              logistics.</li>
+          </ul>
+          <p class="mt-2 text-sm italic">Skills: Leadership, Communication, Typing, Event Planning, Member Engagement
+          </p>
+        </div>
+        <div>
+          <strong>webmistress</strong><br>
+          <em>delta lambda chi</em><br>
+          <em>Irvine, CA | Jan 2024 - March 2024</em>
+          <ul class="list-disc list-inside mt-2">
+            <li>Rebuilt and maintained the chapter’s official website using WIX, increasing website traffic by 3x and
+              improving digital outreach to prospective members.
+            </li>
+            <li>Led a full content and UX overhaul that boosted new member interest, contributing to a 180% membership
+              increase over one year (from 6 to 17 members).
+            </li>
+            <li>Conducted biweekly website audits and collaborated with 4 executive board members to update design and
+              event information consistently.</li>
+          </ul>
+          <p class="mt-2 text-sm italic">Skills: Wix, UI/UX, Communications</p>
+        </div>
+        <div>
+          <strong>academics chair</strong><br>
+          <em>UC Irvine Multicultural Sorority and Fraternity Council</em><br>
+          <em>Irvine, CA | Jan 2024 - March 2024</em>
+          <ul class="list-disc list-inside mt-2">
+            <li>Tracked and analyzed over 900 study hours and quarterly GPA performance, identifying trends that led to
+              a 4% average GPA increase across members.
+            </li>
+            <li>Tracked and analyzed over 900 study hours and quarterly GPA performance, identifying trends that led to
+              a 4% average GPA increase across members.
+            </li>
+            <li>Launched a LinkedIn outreach initiative that led to 70+ new alumni connections in 10 weeks and helped
+              100% of active members create or update their profiles.
+            </li>
+          </ul>
+          <p class="mt-2 text-sm italic">Skills: Data Analysis, Communications</p>
+        </div>
+        <div>
+          <strong>new member educator</strong><br>
+          <em>UC Irvine Multicultural Sorority and Fraternity Council</em><br>
+          <em>Irvine, CA | Jan 2024 - March 2024</em>
+          <ul class="list-disc list-inside mt-2">
+            <li>Designed a 6-week onboarding curriculum for 4 new members, emphasizing leadership development, chapter
+              history, and academic readiness.
+            </li>
+            <li>Facilitated Big/Little pairings and organized 5+ weekly workshops, improving new member satisfaction
+              and retention by over 95%.
+            </li>
+            <li>Acted as liaison between the Alpha Tau class and 10 active members, ensuring full integration through
+              feedback loops and conflict resolution strategies.</li>
+          </ul>
+          <p class="mt-2 text-sm italic">Skills: Leadership, Event Planning, Communication, Team-Collobration</p>
+        </div>
+      </div>
     </section>
   </section>
 
-  <!--projects-->
-  <!-- CSV Table Container (inserted at bottom) -->
-  <section class="max-w-7xl mx-auto px-4 py-10">
-    <h2 class="text-3xl font-bold mb-6 font-serif">projects</h2>
-    <div id="output" class="overflow-x-auto"></div>
-  </section>
-<script src="sc
 
-  <!--contact me-->
-  <section class="max-w-7xl mx-auto px-4 py-10">
-    <section class="w-full md:w-1/2 font-serif">
-
-      <h1 class="text-3xl font-bold mb-8">contact me</h1>
-    </section>
+  <section id="projects" class="max-w-7xl mx-auto px-4 py-10">
+    <h2 class="text-3xl font-bold mb-6 font-serif">Projects</h2>
+    <div id="filters" class="mb-6 flex gap-4 flex-wrap">
+      <button data-category="All" class="filter-btn px-4 py-2 bg-pink-200 rounded hover:bg-pink-300">All</button>
+      <button data-category="Project" class="filter-btn px-4 py-2 bg-pink-200 rounded hover:bg-pink-300">Coding</button>
+      <button data-category="Data Analytics" class="filter-btn px-4 py-2 bg-pink-200 rounded hover:bg-pink-300">Data
+        Analytics</button>
+      <button data-category="Website"
+        class="filter-btn px-4 py-2 bg-pink-200 rounded hover:bg-pink-300">Websites</button>
+    </div>
+    <div id="output" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
   </section>
-ripts/csvparser.js></script>
+
+  </section>
+</body>
+<!-- Footer -->
+<footer id="contact" class="bg-pink-700 py-10 mt-16 text-white">
+  <div class="max-w-7xl mx-auto px-4 text-center font-serif">
+    <h2 class="text-2xl font-bold mb-6">let talk more!</h2>
+
+    <div class="flex justify-center items-center space-x-6 mb-4">
+      <!-- GitHub -->
+      <a href="https://github.com/buimichelle" target="_blank" rel="noopener noreferrer">
+        <img src="/images/github-mark-white.png" alt="GitHub" class="w-8 h-8 hover:opacity-75 transition" />
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:michellebui3402@gmail.com">
+        <img src="/images/icons8-email-50.png" alt="Email" class="w-8 h-8 hover:opacity-75 transition" />
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/michbui" target="_blank" rel="noopener noreferrer">
+        <img src="/images/InBug-White.png" alt="LinkedIn" class="w-8 h-8 hover:opacity-75 transition" />
+      </a>
+    </div>
+    <p class="text-sm text-white">&copy; 2025 Michelle Bui. All rights reserved.</p>
+  </div>
+</footer>
 
 </html>

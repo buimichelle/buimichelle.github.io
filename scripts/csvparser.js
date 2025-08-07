@@ -1,61 +1,77 @@
+let allCards = [];
 
-  // Load and parse CSV from file in same directory
-  Papa.parse('michelle_projects.csv', {
-    download: true,
-    header: true,
-    skipEmptyLines: true,
-    complete: function(results) {
-      displayData(results.data);
-    },
-    error: function(err) {
-      console.error('Error loading CSV:', err);
-      const container = document.getElementById('output');
-      container.innerHTML = `<p class="text-red-600">Failed to load project data.</p>`;
+async function fetchAndRenderCSV() {
+  const response = await fetch('michelle_projects.csv');
+  const csvText = await response.text();
+
+  const rows = csvText.split('\n').map(row => row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/));
+  const headers = rows.shift();
+
+  allCards = rows
+    .filter(columns => columns.length >= 5)
+    .map(columns => {
+      const [category, title, whatIDid, skills, link, notes] = columns.map(c => c.replace(/^"|"$/g, ''));
+      return { category, title, whatIDid, skills, link, notes };
+    });
+
+  renderCards('All');
+}
+
+function renderCards(selectedCategory) {
+  const outputDiv = document.getElementById('output');
+  outputDiv.innerHTML = '';
+
+  const filtered = selectedCategory === 'All'
+    ? allCards
+    : allCards.filter(card => card.category.toLowerCase() === selectedCategory.toLowerCase());
+
+  filtered.forEach(({ category, title, whatIDid, skills, link, notes }) => {
+    const card = document.createElement('div');
+    card.className = 'font-serif bg-white rounded-2xl shadow-lg p-5 hover:shadow-xl transition';
+
+    card.innerHTML = `
+      <h3 class="text-xl font-bold mb-2">${title}</h3>
+      <p class="text-sm text-gray-600 mb-2"><strong>Category:</strong> ${category}</p>
+      <p class="mb-3">${whatIDid}</p>
+      <p class="text-sm mb-3"><strong>Skills:</strong> ${skills}</p>
+      ${link && link !== '0' ? `<a href="${link}" target="_blank" class="text-pink-500 underline">View Project</a>` : ''}
+      ${notes ? `<p class="text-xs mt-2 text-gray-500">${notes}</p>` : ''}
+    `;
+
+    outputDiv.appendChild(card);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchAndRenderCSV();
+
+  document.getElementById('filters').addEventListener('click', (e) => {
+    if (e.target.matches('.filter-btn')) {
+      const selected = e.target.getAttribute('data-category');
+      renderCards(selected);
     }
   });
+});
 
-  function displayData(data) {
-    const container = document.getElementById('output');
-    if (!data.length) {
-      container.innerHTML = '<p class="text-red-600">No data found in CSV.</p>';
-      return;
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  fetchAndRenderCSV();
 
-    const table = document.createElement('table');
-    table.className = 'min-w-full border-collapse border border-gray-300 font-serif';
+  const filterContainer = document.getElementById('filters');
 
-    // Create header row
-    const headerRow = document.createElement('tr');
-    Object.keys(data[0]).forEach(key => {
-      const th = document.createElement('th');
-      th.textContent = key;
-      th.className = 'border border-gray-300 px-4 py-2 bg-pink-200 text-left sticky top-0';
-      headerRow.appendChild(th);
-    });
-    table.appendChild(headerRow);
+  filterContainer.addEventListener('click', (e) => {
+    if (e.target.matches('.filter-btn')) {
+      const selected = e.target.getAttribute('data-category');
+      renderCards(selected);
 
-    // Create data rows
-    data.forEach(row => {
-      const tr = document.createElement('tr');
-      Object.entries(row).forEach(([key, val]) => {
-        const td = document.createElement('td');
-        // If the column is Link and value is a URL, make it clickable
-        if (key.toLowerCase() === 'link' && val && val !== '0') {
-          const a = document.createElement('a');
-          a.href = val;
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-          a.textContent = val;
-          a.className = 'text-pink-600 hover:underline';
-          td.appendChild(a);
-        } else {
-          td.textContent = val;
-        }
-        td.className = 'border border-gray-300 px-4 py-2';
-        tr.appendChild(td);
+      // Remove active style from all buttons
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active-filter', 'bg-pink-500', 'text-white');
+        btn.classList.add('bg-pink-200', 'text-black');
       });
-      table.appendChild(tr);
-    });
 
-    container.appendChild(table);
-  }
+      // Add active style to clicked button
+      e.target.classList.add('active-filter', 'bg-pink-500', 'text-white');
+      e.target.classList.remove('bg-pink-200', 'text-black');
+    }
+  });
+});
